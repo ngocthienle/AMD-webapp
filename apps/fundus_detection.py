@@ -16,7 +16,7 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input as v3_pr
 @st.cache_resource(experimental_allow_widgets=True)
 def load_model():
     model = tf.keras.models.load_model(
-        "aimodels\classification_AMD_Classification_InceptionV3.hdf5"
+        "aimodels/classification_AMD_Classification_InceptionV3.hdf5"
     )
 
     return model
