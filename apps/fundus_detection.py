@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Sep 11 11:54:08 2021
-
+Created on Tuesday, October 24 07:43:53 2023
+This is the Deep Learning web application for eye disease diagnosis.
 @author: thienle
 """
 import cv2
@@ -16,7 +16,7 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input as v3_pr
 @st.cache_resource(experimental_allow_widgets=True)
 def load_model():
     model = tf.keras.models.load_model(
-        "D:\OneDrive\streamlitprojects\eyes_web_apps\\aimodels\classification_AMD_Classification_InceptionV3.hdf5"
+        "aimodels\classification_AMD_Classification_InceptionV3.hdf5"
     )
 
     return model
@@ -27,7 +27,7 @@ with  st.spinner('Loading Model Into Memory...'):
 
 
 def app():
-    image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps/eye_logo.png')
+    image = Image.open('eye_logo.png')
     st.image(image)
     st.title("""Age-Related Macular Degeneration (AMD) Examination""")
     # Create header explaination
@@ -37,7 +37,7 @@ def app():
                  This AI based- webapp examines a fundus image as Normal, Wet AMD, or Dry AMD using backend AI engine.
                  The trained AI engine is based on the Vision Transformer (ViT) deep learning model.
                      """)
-        image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps\example_fundus.png')
+        image = Image.open('example_fundus.png')
         st.image(image,
                  caption='Example AMD classification.')
 
@@ -45,8 +45,8 @@ def app():
     uploaded_file = st.file_uploader("Upload fundus image")
 
     map_dict = {1: 'Dry AMD.',
-                2: 'Normal.',  # hge
-                0: 'Wet AMD.',  # hge_eyeball
+                2: 'Normal.',  # 
+                0: 'Wet AMD.',  # 
                 }
     if uploaded_file is not None:
         # Convert the file to an opencv image.

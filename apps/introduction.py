@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Friday, October 01 07:43:53 2021
-This the third apps in the Stroke Project: Monintoring and tracking rehabilitation
-of stroke patient.
+Created on Tuesday, October 24 07:43:53 2023
+This is the Deep Learning web application for eye disease diagnosis.
 @author: thienle
 """
 import streamlit as st
 from PIL import Image
 
 def app():
-    image = Image.open('D:\OneDrive\streamlitprojects\eyes_web_apps/eye_logo.png')
+    image = Image.open('eye_logo.png')
     st.image(image)
 
     st.title("""Development and Implementation of Web Application Platform for Eye Disease Diagnosis using Artificial Intelligence""")
